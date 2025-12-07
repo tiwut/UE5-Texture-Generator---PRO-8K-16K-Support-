@@ -83,31 +83,31 @@
     </div>
 
     <div class="container">
-        <p>The **UE5 Texture Generator - PRO** is a powerful desktop application built with Python and Tkinter for creating high-quality, procedural **PBR (Physically Based Rendering)** texture maps suitable for game engines like Unreal Engine 5.</p>
+        <p>The UE5 Texture Generator - PRO is a powerful desktop application built with Python and Tkinter for creating high-quality, procedural PBR (Physically Based Rendering) texture maps suitable for game engines like Unreal Engine 5.</p>
         
         <h2>✨ Key Features</h2>
         <ul class="features">
-            <li>**Ultra-High Resolution Support:** Generate textures up to **8192 (8K)** and **16384 (16K)** pixels.</li>
-            <li>**PBR Map Output:** Produces essential texture maps: **Albedo**, **Normal**, and **Roughness**.</li>
-            <li>**Layered Fractal Noise:** Utilizes advanced FBM (Fractal Brownian Motion) for highly detailed, layered surface patterns.</li>
-            <li>**Dynamic Material Types:** Supports generation for common surfaces like **Grass** and **Dirt/Ground**.</li>
-            <li>**Real-time UI:** Built with Tkinter for an intuitive desktop interface. </li>
+            <li>Ultra-High Resolution Support: Generate textures up to 8192 (8K) and 16384 (16K) pixels.</li>
+            <li>PBR Map Output: Produces essential texture maps: Albedo, Normal, and Roughness.</li>
+            <li>Layered Fractal Noise: Utilizes advanced FBM (Fractal Brownian Motion) for highly detailed, layered surface patterns.</li>
+            <li>Dynamic Material Types: Supports generation for common surfaces like Grass and Dirt/Ground.</li>
+            <li>Real-time UI: Built with Tkinter for an intuitive desktop interface. </li>
         </ul>
 
         <h2>⚙️ Generation Parameters</h2>
         <p>Users can fine-tune the resulting texture maps using the following controls:</p>
         <ul>
-            <li>**Material Type:** Selects the base logic for color and composition ("Grass" or "Dirt/Ground").</li>
-            <li>**Resolution:** Sets the output size (e.g., 1024, 4096, 16384).</li>
-            <li>**Noise Scale (Pattern Size):** Controls the size of the fundamental noise pattern.</li>
-            <li>**Detail Octaves (Crispness/Layers):** Determines the number of noise layers stacked for high-frequency detail.</li>
-            <li>**Density (Blade/Rock Count):** Influences the distribution of primary material features.</li>
-            <li>**Color Variation (Mix Strength):** Adjusts the blend between color states (e.g., fresh vs. dead grass, wet vs. dry dirt).</li>
-            <li>**Normal Map Intensity (Bump Depth):** Controls the perceived depth and strength of the surface bumps.</li>
+            <li>Material Type: Selects the base logic for color and composition ("Grass" or "Dirt/Ground").</li>
+            <li>Resolution: Sets the output size (e.g., 1024, 4096, 16384).</li>
+            <li>Noise Scale (Pattern Size): Controls the size of the fundamental noise pattern.</li>
+            <li>Detail Octaves (Crispness/Layers): Determines the number of noise layers stacked for high-frequency detail.</li>
+            <li>Density (Blade/Rock Count): Influences the distribution of primary material features.</li>
+            <li>Color Variation (Mix Strength): Adjusts the blend between color states (e.g., fresh vs. dead grass, wet vs. dry dirt).</li>
+            <li>Normal Map Intensity (Bump Depth): Controls the perceived depth and strength of the surface bumps.</li>
         </ul>
 
         <div class="warning">
-            ⚠️ **WARNING:** Generating 8K and 16K textures requires significant **RAM** and processing time due to the massive pixel count (16K is $268,435,456$ pixels per map). The application leverages threading to prevent the UI from freezing during the intensive calculations.
+            ⚠️ WARNING: Generating 8K and 16K textures requires significant RAM and processing time due to the massive pixel count (16K is $268,435,456$ pixels per map). The application leverages threading to prevent the UI from freezing during the intensive calculations.
         </div>
 
         <h2>🛠️ Core Algorithmic Details</h2>
@@ -117,15 +117,15 @@
         <p>This function creates a high-quality, continuous height map by combining multiple layers (octaves) of noise. Each octave has decreasing amplitude and increasing frequency to add fine details to the base pattern, mimicking natural surface complexity.</p>
         
         <h3>2. Normal Map Calculation (`generate_normal_from_height`)</h3>
-        <p>The normal map, which defines how light reflects off the surface, is derived from the height map. It uses the **gradient** function (`np.gradient`) to find the change in height across the X and Y axes, which are then normalized and converted into the red (X), green (Y), and blue (Z) channels of the normal map.  </p>
+        <p>The normal map, which defines how light reflects off the surface, is derived from the height map. It uses the gradient function (`np.gradient`) to find the change in height across the X and Y axes, which are then normalized and converted into the red (X), green (Y), and blue (Z) channels of the normal map.  </p>
         
         <h2>📄 Technology Stack</h2>
         <ul>
-            <li>**Python**</li>
-            <li>**Tkinter:** User Interface (GUI)</li>
-            <li>**PIL (Pillow):** Image manipulation and resizing</li>
-            <li>**NumPy:** High-performance array operations for texture generation</li>
-            <li>**Threading:** Ensures a responsive application during long calculations</li>
+            <li>Python</li>
+            <li>Tkinter: User Interface (GUI)</li>
+            <li>PIL (Pillow): Image manipulation and resizing</li>
+            <li>NumPy: High-performance array operations for texture generation</li>
+            <li>Threading: Ensures a responsive application during long calculations</li>
         </ul>
         
         <h2>🐍 Python Code Snippet (Core Class)</h2>
